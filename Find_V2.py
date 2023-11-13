@@ -1,7 +1,6 @@
 from imports import *
-# This class essentially is created to simplify find calls
-# find is instantiated so we can use these methods and call each of them through an object
-# Each method uses a selenium method which searches the dom for the item and selects it, so it returns the item
+
+# Class to abstract away so scripts can be run through a single object
 class Find:
 
     def __init__(self, driver):

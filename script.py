@@ -1,52 +1,7 @@
-import time
-import unittest
-import os
-from appium import webdriver
-from appium.webdriver.common.appiumby import AppiumBy as app
-from appium.options.android import UiAutomator2Options
-from appium.webdriver.extensions.android.nativekey import AndroidKey
-
-from Find import Find
-
-
-global long_sleep, short_sleep, mid_sleep, lil_sleep
-long_sleep = 20
-mid_sleep = 7
-short_sleep = 5
-lil_sleep = 3
-os.environ["ANDROID_HOME"] = "/Users/wil13465/Library/Android/sdk"
-os.environ["JAVA_HOME"] = "$(/usr/libexec/java_home)"
-
-capabilities = dict(
-    platformName='Android',
-    automationName='uiautomator2',
-    deviceName='emulator-5554',
-    # appPackage='com.esri.earth.phone',
-    # appActivity='.MainActivity',
-    language='en',
-    locale='US'
-)
-
-appium_server_url = 'http://localhost:4723'
-capabilities_options = UiAutomator2Options().load_capabilities(capabilities)
-
+from imports import *
+from setup import *
 
 class TestAppium(unittest.TestCase):
-
-    def setUp(self) -> None:
-        # creates instance of webdriver remote which allows us to use methods of selenium
-        self.driver = webdriver.Remote(command_executor=appium_server_url, options=capabilities_options)
-        self.window = self.driver.get_window_size()
-        self.height = self.window.get('height')
-        self.width = self.window.get('width')
-        self.right_side = self.width - (self.width * 0.2)
-        self.left_side = self.width - (self.width * 0.8)
-        self.middle_of_screen = self.height * .5
-        # creates instance of find from framework and is able to access those methods using the driver that
-        # we instantiated here
-        global find_by
-        find_by = Find(self.driver)
-
 
 
 
@@ -62,7 +17,6 @@ class TestAppium(unittest.TestCase):
         click_app.click()
         time.sleep(short_sleep)
 
-
     def test_2_allow_permissions(self):
         time.sleep(2)
         allow_gallery = find_by.ID("com.android.permissioncontroller:id/permission_allow_one_time_button")
@@ -71,14 +25,12 @@ class TestAppium(unittest.TestCase):
         allow_location.click()
         allow_gallery = find_by.ID("com.android.permissioncontroller:id/permission_allow_button")
         allow_gallery.click()
+
     def test_3_swipe_tut(self):
         self.driver.swipe(self.right_side, self.middle_of_screen, self.left_side, self.middle_of_screen, 100)
         self.driver.swipe(self.right_side, self.middle_of_screen, self.left_side, self.middle_of_screen, 100)
         self.driver.swipe(self.right_side, self.middle_of_screen, self.left_side, self.middle_of_screen, 100)
         self.driver.swipe(self.right_side, self.middle_of_screen, self.left_side, self.middle_of_screen, 100)
-
-
-
 
     def test_4_basemap_selection(self):
         time.sleep(short_sleep)
@@ -86,7 +38,8 @@ class TestAppium(unittest.TestCase):
         skip_button.click()
         time.sleep(long_sleep)
 
-        close = self.driver.find_element(app.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout[1]/android.widget.ImageView")
+        close = self.driver.find_element(app.XPATH,
+                                         "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout[1]/android.widget.ImageView")
         close.click()
         # popup_checkbox = self.driver.find_element(app.ID, "com.esri.earth.phone:id/cb_show")
         # popup_checkbox.click()
@@ -113,7 +66,8 @@ class TestAppium(unittest.TestCase):
         enterprise = find_by.ID("com.esri.earth.phone:id/tv_enterprise")
         enterprise.click()
         time.sleep(2)
-        enter_url = self.driver.find_element(by=app.XPATH, value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]")
+        enter_url = self.driver.find_element(by=app.XPATH,
+                                             value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.view.ViewGroup[1]")
         enter_url.click()
         enter_input = self.driver.find_element(app.ID, "com.esri.earth.phone:id/et_enterprise_url")
         enter_input.send_keys("https://rpubs22201.ags.esri.com/portal")
@@ -124,16 +78,20 @@ class TestAppium(unittest.TestCase):
         button.click()
         time.sleep(mid_sleep)
 
-        sign_in = self.driver.find_element(by=app.XPATH, value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout[3]/android.widget.TextView")
+        sign_in = self.driver.find_element(by=app.XPATH,
+                                           value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout[3]/android.widget.TextView")
         sign_in.click()
         time.sleep(mid_sleep)
-        user_name = self.driver.find_element(by=app.XPATH, value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View[1]/android.view.View[1]/android.widget.EditText")
+        user_name = self.driver.find_element(by=app.XPATH,
+                                             value="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View[1]/android.view.View[1]/android.widget.EditText")
         user_name.send_keys("creator2")
-        pass_word = self.driver.find_element(app.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View[1]/android.view.View[2]/android.widget.EditText")
+        pass_word = self.driver.find_element(app.XPATH,
+                                             "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View[1]/android.view.View[2]/android.widget.EditText")
         pass_word.send_keys("portalaccount1")
         time.sleep(lil_sleep)
 
-        sign_in = self.driver.find_element(app.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View[1]/android.widget.Button[1]")
+        sign_in = self.driver.find_element(app.XPATH,
+                                           "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[2]/android.view.View[2]/android.view.View/android.view.View[2]/android.view.View[1]/android.widget.Button[1]")
         time.sleep(lil_sleep)
         sign_in.click()
         time.sleep(lil_sleep)
@@ -143,11 +101,13 @@ class TestAppium(unittest.TestCase):
         toolbox = self.driver.find_element(app.ID, "com.esri.earth.phone:id/img_tools")
         toolbox.click()
         time.sleep(mid_sleep)
-        points = self.driver.find_element(app.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout[1]/android.widget.RelativeLayout/android.widget.RelativeLayout[1]/android.widget.ImageView")
+        points = self.driver.find_element(app.XPATH,
+                                          "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout[1]/android.widget.RelativeLayout/android.widget.RelativeLayout[1]/android.widget.ImageView")
         points.click()
         time.sleep(short_sleep)
         self.driver.swipe(self.right_side, self.middle_of_screen, self.left_side, self.middle_of_screen, 1000)
-        name = self.driver.find_element(app.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]")
+        name = self.driver.find_element(app.XPATH,
+                                        "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[1]")
 
         name.click()
         time.sleep(long_sleep)
@@ -159,9 +119,9 @@ class TestAppium(unittest.TestCase):
         time.sleep(mid_sleep)
         add_point = self.driver.find_element(app.ID, "com.esri.earth.phone:id/iv_add_point")
         add_point.click()
-        back_button = self.driver.find_element(app.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.ImageView")
+        back_button = self.driver.find_element(app.XPATH,
+                                               "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.ImageView")
         back_button.click()
-
 
     def test_6_search(self):
         search = self.driver.find_element(app.ID, "com.esri.earth.phone:id/rl_search_place")
@@ -170,17 +130,18 @@ class TestAppium(unittest.TestCase):
         search_input = self.driver.find_element(app.ID, "com.esri.earth.phone:id/et_search")
         search_input.send_keys("Esri")
         time.sleep(mid_sleep)
-        first_input = self.driver.find_element(app.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.TextView")
+        first_input = self.driver.find_element(app.XPATH,
+                                               "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.RelativeLayout/android.view.ViewGroup/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.TextView")
         first_input.click()
         time.sleep(mid_sleep)
         placemark = self.driver.find_element(app.ID, "com.esri.earth.phone:id/image_add_favourt")
         placemark.click()
         route = self.driver.find_element(app.ID, "com.esri.earth.phone:id/image_route")
         route.click()
-        google_maps = self.driver.find_element(app.ID,"com.esri.earth.phone:id/cl_item")
+        google_maps = self.driver.find_element(app.ID, "com.esri.earth.phone:id/cl_item")
         google_maps.click()
 
-        #back button
+        # back button
         # self.driver.press_keycode(3)
 
         # recents button
@@ -202,26 +163,14 @@ class TestAppium(unittest.TestCase):
         time.sleep(mid_sleep)
         self.driver.press_keycode(3)
 
-
-
-
-
-
     # move = self.driver.find_element(app.XPATH,
-        #                             "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[2]")
-        # move.click()
+    #                             "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[2]")
+    # move.click()
 
-
-
-
-
-
-        # add = self.driver.find_element(app.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout[2]/android.widget.FrameLayout/android.widget.RelativeLayout[2]/android.widget.RelativeLayout/android.widget.RelativeLayout[2]/android.widget.ImageView")
-        # add.click()
-        # portal = self.driver.find_element(app.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[2]")
-        # portal.click()
-
-
+    # add = self.driver.find_element(app.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout[2]/android.widget.FrameLayout/android.widget.RelativeLayout[2]/android.widget.RelativeLayout/android.widget.RelativeLayout[2]/android.widget.ImageView")
+    # add.click()
+    # portal = self.driver.find_element(app.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.LinearLayout[2]")
+    # portal.click()
 
 
 if __name__ == '__main__':
