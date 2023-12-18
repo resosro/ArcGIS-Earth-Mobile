@@ -1,7 +1,4 @@
 from imports import *
-# This class essentially is created to simplify find calls
-# find is instantiated so we can use these methods and call each of them through an object
-# Each method uses a selenium method which searches the dom for the item and selects it, so it returns the item
 class Find:
 
     def __init__(self, driver):
@@ -19,3 +16,7 @@ class Find:
     def link_text(self, link_text):
         return self.driver.find_element(app.LINK_TEXT, link_text)
 
+    def swipe(self, start_x, start_y, end_x, end_y, duration):
+        return self.driver.swipe(start_x,start_y,end_x,end_y,duration)
+    def accessibility_id(self, a_id):
+        return self.driver.find_element(app.ACCESSIBILITY_ID, a_id )

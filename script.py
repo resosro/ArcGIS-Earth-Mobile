@@ -1,9 +1,22 @@
 from imports import *
 from setup import *
 
+
 class TestAppium(unittest.TestCase):
-
-
+    # Seems like this must be in the actual class to be run
+    def setUp(self) -> None:
+        # creates instance of webdriver remote which allows us to use methods of selenium
+        self.driver = webdriver.Remote(command_executor=appium_server_url, options=capabilities_options)
+        self.window = self.driver.get_window_size()
+        self.height = self.window.get('height')
+        self.width = self.window.get('width')
+        self.right_side = self.width - (self.width * 0.2)
+        self.left_side = self.width - (self.width * 0.8)
+        self.middle_of_screen = self.height * .5
+        # creates instance of find from framework and is able to access those methods using the driver that
+        # we instantiated here
+        global find_by
+        find_by = Find(self.driver)
 
     def tearDown(self) -> None:
         if self.driver:
@@ -17,47 +30,63 @@ class TestAppium(unittest.TestCase):
         click_app.click()
         time.sleep(short_sleep)
 
+
     def test_2_allow_permissions(self):
         time.sleep(2)
         allow_gallery = find_by.ID("com.android.permissioncontroller:id/permission_allow_one_time_button")
         allow_gallery.click()
+        time.sleep(2)
         allow_location = find_by.ID("com.android.permissioncontroller:id/permission_allow_foreground_only_button")
         allow_location.click()
-        allow_gallery = find_by.ID("com.android.permissioncontroller:id/permission_allow_button")
-        allow_gallery.click()
+        time.sleep(2)
+        allow_photo = find_by.ID("com.android.permissioncontroller:id/permission_allow_button")
+        allow_photo.click()
 
     def test_3_swipe_tut(self):
         self.driver.swipe(self.right_side, self.middle_of_screen, self.left_side, self.middle_of_screen, 100)
+        time.sleep(2)
         self.driver.swipe(self.right_side, self.middle_of_screen, self.left_side, self.middle_of_screen, 100)
+        time.sleep(2)
         self.driver.swipe(self.right_side, self.middle_of_screen, self.left_side, self.middle_of_screen, 100)
-        self.driver.swipe(self.right_side, self.middle_of_screen, self.left_side, self.middle_of_screen, 100)
+        time.sleep(2)
+        self.driver.swipe(self.right_side, self.middle_of_screen, self.left_side, self.middle_of_screen, 50)
+        time.sleep(2)
+
 
     def test_4_basemap_selection(self):
         time.sleep(short_sleep)
-        skip_button = self.driver.find_element(by=app.ID, value="com.esri.earth.phone:id/rl_guid_skip")
+        skip_button = find_by.x_path("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View")
         skip_button.click()
-        time.sleep(long_sleep)
+        time.sleep(short_sleep)
 
-        close = self.driver.find_element(app.XPATH,
-                                         "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.RelativeLayout[1]/android.widget.ImageView")
+
+        close = find_by.ID("com.esri.earth.phone:id/rl_close")
         close.click()
-        # popup_checkbox = self.driver.find_element(app.ID, "com.esri.earth.phone:id/cb_show")
-        # popup_checkbox.click()
-        # more_button = self.driver.find_element(app.ID, "com.esri.earth.phone:id/tv_more")
-        # more_button.click()
-        # base_map = self.driver.find_element(app.ID, "com.esri.earth.phone:id/tv_live_basemaps")
-        # base_map.click()
-        # time.sleep(mid_sleep)
-        #
-        # world_top = self.driver.find_element(app.XPATH, "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.drawerlayout.widget.DrawerLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.RelativeLayout[2]/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.FrameLayout/android.widget.RelativeLayout/androidx.viewpager.widget.ViewPager/android.widget.LinearLayout/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.FrameLayout/android.widget.RelativeLayout/android.widget.RelativeLayout")
-        # world_top.click()
-        time.sleep(long_sleep)
+
+        # do_not_show = find_by.ID("com.esri.earth.phone:id/cb_show")
+        # do_not_show.click()
+
+
+
+    #   Living atlas click
+    #     time.sleep(short_sleep)
+    #     terrain = find_by.x_path("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View[3]/android.view.View/android.view.View[2]/android.view.View[1]/android.view.View")
+    #     terrain.click()
+    #     time.sleep(2)
+    #     user_name = find_by.ID("user_username")
+    #     user_name.send_keys("agreleasepublish")
+    #   sign_in
+
+
+
+
+
 
     def test_4_sign_in(self):
-        rl = find_by.ID("com.esri.earth.phone:id/rl_admin")
+        rl = find_by.ID("Admin")
         rl.click()
         time.sleep(lil_sleep)
-        sign_in = find_by.ID("com.esri.earth.phone:id/img_icon")
+        sign_in = find_by.ID("Portal Url")
         sign_in.click()
         # Online
         # agis_online = find_by.ID("com.esri.earth.phone:id/tv_online")
