@@ -1,5 +1,7 @@
 from imports import *
 from appium.options.android import UiAutomator2Options
+from appium.webdriver.common.touch_action import TouchAction
+from appium import webdriver
 
 global long_sleep, short_sleep, mid_sleep, lil_sleep
 long_sleep = 20
