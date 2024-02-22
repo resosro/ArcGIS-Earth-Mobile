@@ -2,7 +2,6 @@ from imports import *
 from setup import *
 
 import sys
-sys.path.append(r'\\ragsauto01\arcgis_codeshare')
 import results_report
 
 
@@ -456,12 +455,15 @@ class TestAppium(unittest.TestCase):
 
 
 def generate_report():
+    sys.path.append(r'\\ragsauto01\\arcgis_codeshare')
+
+    pc_report_file = open("demo_file.txt", "w")
     if pc_report_file:
-    if os.path.isfile(pc_report_file):
-        if ln_exit_code == 0:
-            results_report.main("c:\temp\results_report.json”, "Publish Shape File via Portal", "Pass", "Successfully published file”)
-        else:
-            results_report.main("c:\temp\results_report.json”, "Publish Shape File via Portal", "Fail", "Failed to publish file”)
+        if os.path.isfile(pc_report_file):
+            if ln_exit_code == 0:
+                results_report.main("c:\\temp\\results_report.json", "Publish Shape File via Portal", "Pass", "Successfully published file")
+            else:
+                results_report.main("c:\\temp\\results_report.json", "Publish Shape File via Portal", "Fail", "Failed to publish file")
     else:
         print("Report file not found: " + pc_report_file)
 
@@ -471,5 +473,4 @@ def generate_report():
 if __name__ == '__main__':
     unittest.main()
     generate_report()
-    python "\\ragsauto01\\arcgis_codeshare\write_sanity_report_xml.py" 5008 "c:\\temp\\agend_report_header.json" "c:\\temp\\results_report.json” “c:\\temp\ArcGIS Enterprise on Kubernetes Confidence Tests - AZUR.xml” “c:\\temp\ArcGIS Enterprise on Kubernetes Confidence Tests - AZUR Complete.xml”
 
