@@ -2,7 +2,7 @@ from imports import *
 from setup import *
 
 import sys
-import results_report
+# import results_report
 
 
 class TestAppium(unittest.TestCase):
@@ -472,5 +472,5 @@ def generate_report():
 
 if __name__ == '__main__':
     unittest.main()
-    generate_report()
+    # generate_report()
 
