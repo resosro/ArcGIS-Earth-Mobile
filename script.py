@@ -5,17 +5,6 @@ import sys
 sys.path.append(r'\\ragsauto01\arcgis_codeshare')
 import results_report
 
-if pc_report_file:
-    if os.path.isfile(pc_report_file):
-        if ln_exit_code == 0:
-            results_report.main(“c:\temp\results_report.json”, "Publish Shape File via Portal", "Pass", "Successfully published file”)
-        else:
-            results_report.main(“c:\temp\results_report.json”, "Publish Shape File via Portal", "Fail", "Failed to publish file”)
-    else:
-        print("Report file not found: " + pc_report_file)
- 
-# Once you have the JSON file you can generate the XML file to upload by using this script:
-python "\\ragsauto01\arcgis_codeshare\write_sanity_report_xml.py" 5008 "c:\temp\agend_report_header.json" “c:\temp\results_report.json” “c:\temp\ArcGIS Enterprise on Kubernetes Confidence Tests - AZURE.xml” “c:\temp\ArcGIS Enterprise on Kubernetes Confidence Tests - AZURE Complete.xml”
 
 class TestAppium(unittest.TestCase):
 
@@ -470,9 +459,9 @@ def generate_report():
     if pc_report_file:
     if os.path.isfile(pc_report_file):
         if ln_exit_code == 0:
-            results_report.main(“c:\temp\results_report.json”, "Publish Shape File via Portal", "Pass", "Successfully published file”)
+            results_report.main("c:\temp\results_report.json”, "Publish Shape File via Portal", "Pass", "Successfully published file”)
         else:
-            results_report.main(“c:\temp\results_report.json”, "Publish Shape File via Portal", "Fail", "Failed to publish file”)
+            results_report.main("c:\temp\results_report.json”, "Publish Shape File via Portal", "Fail", "Failed to publish file”)
     else:
         print("Report file not found: " + pc_report_file)
 
