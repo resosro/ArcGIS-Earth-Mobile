@@ -1,0 +1,58 @@
+{
+    "Create Kubernetes Cluster": {
+        "results": "Pass",
+        "comment": "Cluster Name: agendgkeclu112qa"
+    },
+    "Kubernetes Namespace": {
+        "results": "Pass",
+        "comment": "Namespace agendgkens112qa created successfully."
+    },
+    "Create ArcGIS Enterprise on Kubernetes Deployment": {
+        "results": "Pass",
+        "comment": "Endeavor Deployment URL: https://agendgkeclu112qa.webgistesting.net/arcgis/manager"
+    },
+    "Map ArcGIS Enterprise on Kubernetes Public IP": {
+        "results": "Pass",
+        "comment": "Successfully mapped Public IP 104.196.255.42 to FQDN agendgkeclu112qa.webgistesting.net."
+    },
+    "Endeavor configuration": {
+        "results": "Pass",
+        "comment": ""
+    },
+    "Check Portal URL": {
+        "results": "Pass",
+        "comment": "Portal URL:<br>https://agendgkeclu112qa.webgistesting.net/arcgis/home<br><br>Default Login:<br>siteadmin/pwd4.admin"
+    },
+    "Configure Utility Services": {
+        "results": "Pass",
+        "comment": ""
+    },
+    "Configure User Account": {
+        "results": "Pass",
+        "comment": ""
+    },
+    "Publish Shape File via Portal": {
+        "results": "Pass",
+        "comment": "Successfully published file: countries.zip"
+    },
+    "Publish Tiles via Portal": {
+        "results": "Pass",
+        "comment": "Successfully published file: states_map1.tpkx"
+    },
+    "Publish CSV File via Portal": {
+        "results": "Pass",
+        "comment": "Successfully published file: esriOffices.csv"
+    },
+    "Proximity Buffer Test via Portal": {
+        "results": "Pass",
+        "comment": ""
+    },
+    "Update Daily Share": {
+        "results": "Pass",
+        "comment": ""
+    },
+    "Curl Job to Update esrirelease Repo": {
+        "results": "Pass",
+        "comment": ""
+    }
+}

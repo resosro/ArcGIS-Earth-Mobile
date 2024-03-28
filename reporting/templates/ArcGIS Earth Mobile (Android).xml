@@ -1,0 +1,161 @@
+<TestResults> 
+	 <TestSuite testSuiteId="586">ArcGIS Earth Mobile (Android)</TestSuite> 
+	 <Product productId="42">ArcGIS Earth Mobile (Test)</Product> 
+	 <ProductVersion versionId="14">1.0</ProductVersion> 
+	 <Email></Email> 
+<!-- Mandatory Field -->
+	 <Platform></Platform> 
+<!-- Mandatory Field -->
+	 <Build></Build> 
+<!-- Date Time Format - MM/dd/yyyy HH:mm  -->
+	 <DateTime></DateTime> 
+	 <MachineName></MachineName> 
+	 <Owner></Owner> 
+	 <Notes></Notes> 
+	 <TestSuiteComments></TestSuiteComments> 
+<!-- Valid values: yes, no  -->
+	 <DailyShareUpdated></DailyShareUpdated> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Enter multiple images names in comma separated format -->
+	 <ImageNameTS></ImageNameTS> 
+	 <TestCases> 
+ 	 <!-- Do not edit id and name attributes values --> 
+		 <TestCase id="17180" name="allow_permissions"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17181" name="swipe_tut"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17182" name="basemap_selection"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17183" name="sign_in_workflow"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17184" name="search_places"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17185" name="toc_list"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17186" name="toc_add_data"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17187" name="toc_add_from_url"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17188" name="add_from_file"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17189" name="add_from_QR"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17190" name="toc_add_from_portal"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17191" name="select_share_screenshot"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17192" name="click_home"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17193" name="click_arrow"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17194" name="find"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17195" name="toolbox"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17196" name="draw"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17197" name="3D_analysis"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17198" name="underground"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17199" name="tour"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17200" name="track"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17201" name="measure"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 		 <TestCase id="17202" name="test_left_toc"> 
+			 <Result critical="true">N/A</Result>
+			 <Comments></Comments> 
+<!-- Use Unique names for images (.jpg, .jpeg, .png supported). Multiple images not allowed -->
+			 <ImageNameTC></ImageNameTC> 
+		 </TestCase> 
+ 	 </TestCases> 
+</TestResults>

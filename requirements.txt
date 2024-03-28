@@ -14,3 +14,4 @@ trio-websocket==0.10.4
 urllib3==2.2.1
 wsproto==1.2.0
 pytest-html
+pytest-json-report
