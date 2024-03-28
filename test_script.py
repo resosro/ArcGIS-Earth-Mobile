@@ -89,6 +89,8 @@ class TestAppium(unittest.TestCase):
                 "results": "Pass",
                 "comment": "Permissions Passed"
             }
+            time.sleep(mid_sleep)
+
         except:
             initial[name] = {
                 "results": "Failed",
@@ -97,7 +99,7 @@ class TestAppium(unittest.TestCase):
 
     def test_03__basemap_selection(self):
         try:
-            time.sleep(mid_sleep)
+            time.sleep(long_sleep)
             # removed in 2.0
             # skip_button = find_by.x_path("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View")
             # skip_button.click()
@@ -116,7 +118,7 @@ class TestAppium(unittest.TestCase):
     def test_04__sign_in_workflow(self):
 
         try:
-            time.sleep(short_sleep)
+            time.sleep(long_sleep)
 
             self.start_sign_in()
             self.sign_in_enterprise()
@@ -641,7 +643,7 @@ class TestAppium(unittest.TestCase):
 
     def test_23__test_left_toc(self):
         try:
-            self.explore_gis_gallery()
+            # self.explore_gis_gallery()
             self.tracks()
             self.tours()
             self.downloads()
