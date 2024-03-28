@@ -67,13 +67,11 @@ class TestAppium(unittest.TestCase):
                 "results": "Pass",
                 "comment": "Permissions Passed"
             }
-            self.write_to_report()
         except:
             initial[name] = {
                 "results": "Failed",
                 "comment": "Permissions Failed"
             }
-            self.write_to_report()
 
 
     def test_02__swipe_tut(self):
