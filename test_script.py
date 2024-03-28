@@ -1,6 +1,5 @@
 import os.path
 
-import helper
 from imports import *
 from setup import *
 import main
