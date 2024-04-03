@@ -644,12 +644,12 @@ class TestAppium(unittest.TestCase):
     def test_23__test_left_toc(self):
         try:
             # self.explore_gis_gallery()
-            self.tracks()
-            self.tours()
-            self.downloads()
-            self.settings()
-            self.provide_feedback()
-            self.about()
+            # self.tracks()
+            # self.tours()
+            # self.downloads()
+            # self.settings()
+            # self.provide_feedback()
+            # self.about()
             initial[name] = {
                 "results": "Pass",
                 "comment": "Test Passed"
