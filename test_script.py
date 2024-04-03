@@ -87,31 +87,32 @@ class TestAppium(unittest.TestCase):
                               50)
             initial[name] = {
                 "results": "Pass",
-                "comment": "Permissions Passed"
+                "comment": "Swipe Passed"
             }
             time.sleep(mid_sleep)
 
         except:
             initial[name] = {
                 "results": "Failed",
-                "comment": "Permissions Failed"
+                "comment": "Swipe Failed"
             }
 
     def test_03__basemap_selection(self):
         try:
             time.sleep(long_sleep)
-            # removed in 2.0
-            # skip_button = find_by.x_path("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/androidx.compose.ui.platform.ComposeView/android.view.View/android.view.View/android.view.View")
-            # skip_button.click()
             first_choice = find_by.x_path("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/androidx.recyclerview.widget.RecyclerView/android.widget.RelativeLayout[1]/android.widget.RelativeLayout/android.widget.ImageView")
             first_choice.click()
             time.sleep(long_sleep)
             close = find_by.ID("com.esri.earth.phone:id/rl_close")
             close.click()
+            initial[name] = {
+                "results": "Failed",
+                "comment": "Base Map Passed"
+            }
         except:
             initial[name] = {
                 "results": "Failed",
-                "comment": "Permissions Failed"
+                "comment": "Base Map Failed"
             }
 
 
@@ -642,25 +643,25 @@ class TestAppium(unittest.TestCase):
             }
 
     def test_23__test_left_toc(self):
-        try:
-            # self.explore_gis_gallery()
-            # self.tracks()
-            # self.tours()
-            # self.downloads()
-            # self.settings()
-            # self.provide_feedback()
-            # self.about()
-            initial[name] = {
+        # try:
+        #     # self.explore_gis_gallery()
+        #     # self.tracks()
+        #     # self.tours()
+        #     # self.downloads()
+        #     # self.settings()
+        #     # self.provide_feedback()
+        #     # self.about()
+        initial[name] = {
                 "results": "Pass",
                 "comment": "Test Passed"
             }
-            self.write_to_report()
-        except:
-            initial[name] = {
-                "results": "Failed",
-                "comment": "Test Failed"
-            }
-            self.write_to_report()
+        #     self.write_to_report()
+        # except:
+        #     initial[name] = {
+        #         "results": "Failed",
+        #         "comment": "Test Failed"
+        #     }
+        self.write_to_report()
 
 
     def explore_gis_gallery(self):
