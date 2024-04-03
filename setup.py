@@ -5,10 +5,9 @@ from appium import webdriver
 
 global long_sleep, short_sleep, mid_sleep, lil_sleep
 long_sleep = 20
-mid_sleep = 7
-short_sleep = 5
-lil_sleep = 3
-
+mid_sleep = 10
+short_sleep = 7
+lil_sleep = 5
 capabilities = dict(
     platformName='Android',
     automationName='uiautomator2',
