@@ -71,8 +71,8 @@ class TestAppium(unittest.TestCase):
             }
         except:
             initial[name] = {
-                "results": "Failed",
-                "comment": "Permissions Failed"
+                "results": "Fail",
+                "comment": "Permissions Fail"
             }
 
 
