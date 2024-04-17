@@ -95,8 +95,8 @@ class TestAppium(unittest.TestCase):
 
         except:
             initial[name] = {
-                "results": "Failed",
-                "comment": "Swipe Failed"
+                "results": "Fail",
+                "comment": "Swipe Fail"
             }
 
     def test_03__basemap_selection(self):
@@ -108,13 +108,13 @@ class TestAppium(unittest.TestCase):
             close = find_by.ID("com.esri.earth.phone:id/rl_close")
             close.click()
             initial[name] = {
-                "results": "Failed",
+                "results": "Fail",
                 "comment": "Base Map Passed"
             }
         except:
             initial[name] = {
-                "results": "Failed",
-                "comment": "Base Map Failed"
+                "results": "Fail",
+                "comment": "Base Map Fail"
             }
 
 
@@ -133,8 +133,8 @@ class TestAppium(unittest.TestCase):
             }
         except:
             initial[name] = {
-                "results": "Failed",
-                "comment": "Permissions Failed"
+                "results": "Fail",
+                "comment": "Permissions Fail"
             }
 
     def sign_in_online(self):
@@ -226,8 +226,8 @@ class TestAppium(unittest.TestCase):
         }
         except:
             initial[name] = {
-            "results": "Failed",
-            "comment": "Permissions Failed"
+            "results": "Fail",
+            "comment": "Permissions Fail"
         }
 
     def test_06__toc_list(self):
@@ -256,8 +256,8 @@ class TestAppium(unittest.TestCase):
                 }
         except:
                 initial[name] = {
-                    "results": "Failed",
-                    "comment": "Test Failed"
+                    "results": "Fail",
+                    "comment": "Test Fail"
                 }
     def test_07__toc_add_data(self):
 
@@ -274,8 +274,8 @@ class TestAppium(unittest.TestCase):
             }
         except:
             initial[name] = {
-                "results": "Failed",
-                "comment": "Test Failed"
+                "results": "Fail",
+                "comment": "Test Fail"
             }
 
     def test_08__toc_add_from_url(self):
@@ -292,8 +292,8 @@ class TestAppium(unittest.TestCase):
             }
         except:
             initial[name] = {
-                "results": "Failed",
-                "comment": "Test Failed"
+                "results": "Fail",
+                "comment": "Test Fail"
             }
 
     def test_09__add_from_file(self):
@@ -309,8 +309,8 @@ class TestAppium(unittest.TestCase):
             }
         except:
             initial[name] = {
-                "results": "Failed",
-                "comment": "Test Failed"
+                "results": "Fail",
+                "comment": "Test Fail"
             }
 
     def test_10__add_from_QR(self):
@@ -327,8 +327,8 @@ class TestAppium(unittest.TestCase):
             }
         except:
             initial[name] = {
-                "results": "Failed",
-                "comment": "Test Failed"
+                "results": "Fail",
+                "comment": "Test Fail"
             }
 
     def click_portal(self):
@@ -366,8 +366,8 @@ class TestAppium(unittest.TestCase):
             }
         except:
             initial[name] = {
-                "results": "Failed",
-                "comment": "Test Failed"
+                "results": "Fail",
+                "comment": "Test Fail"
             }
 
     def test_12__select_share_screenshot(self):
@@ -384,8 +384,8 @@ class TestAppium(unittest.TestCase):
             }
         except:
             initial[name] = {
-                "results": "Failed",
-                "comment": "Test Failed"
+                "results": "Fail",
+                "comment": "Test Fail"
             }
 
     def test_13__click_home(self):
@@ -399,8 +399,8 @@ class TestAppium(unittest.TestCase):
             }
         except:
             initial[name] = {
-                "results": "Failed",
-                "comment": "Test Failed"
+                "results": "Fail",
+                "comment": "Test Fail"
             }
 
     def test_14__click_arrow(self):
@@ -414,8 +414,8 @@ class TestAppium(unittest.TestCase):
             }
         except:
             initial[name] = {
-                "results": "Failed",
-                "comment": "Test Failed"
+                "results": "Fail",
+                "comment": "Test Fail"
             }
 
     def test_15__find(self):
@@ -431,8 +431,8 @@ class TestAppium(unittest.TestCase):
             }
         except:
             initial[name] = {
-                "results": "Failed",
-                "comment": "Test Failed"
+                "results": "Fail",
+                "comment": "Test Fail"
             }
 
     def test_16__toolbox(self):
@@ -446,8 +446,8 @@ class TestAppium(unittest.TestCase):
             }
         except:
             initial[name] = {
-                "results": "Failed",
-                "comment": "Test Failed"
+                "results": "Fail",
+                "comment": "Test Fail"
             }
 
 
@@ -476,8 +476,8 @@ class TestAppium(unittest.TestCase):
             }
         except:
             initial[name] = {
-                "results": "Failed",
-                "comment": "Test Failed"
+                "results": "Fail",
+                "comment": "Test Fail"
             }
 
     def click_toolbox_item(self):
@@ -569,8 +569,8 @@ class TestAppium(unittest.TestCase):
             }
         except:
             initial[name] = {
-                "results": "Failed",
-                "comment": "Test Failed"
+                "results": "Fail",
+                "comment": "Test Fail"
             }
 
     def test_19__underground(self):
@@ -587,8 +587,8 @@ class TestAppium(unittest.TestCase):
             }
         except:
             initial[name] = {
-                "results": "Failed",
-                "comment": "Test Failed"
+                "results": "Fail",
+                "comment": "Test Fail"
             }
 
     def test_20__tour(self):
@@ -603,8 +603,8 @@ class TestAppium(unittest.TestCase):
             }
         except:
             initial[name] = {
-                "results": "Failed",
-                "comment": "Test Failed"
+                "results": "Fail",
+                "comment": "Test Fail"
             }
 
     def test_21__track(self):
@@ -624,8 +624,8 @@ class TestAppium(unittest.TestCase):
             }
         except:
             initial[name] = {
-                "results": "Failed",
-                "comment": "Test Failed"
+                "results": "Fail",
+                "comment": "Test Fail"
             }
 
     def test_22__measure(self):
@@ -640,8 +640,8 @@ class TestAppium(unittest.TestCase):
             }
         except:
             initial[name] = {
-                "results": "Failed",
-                "comment": "Test Failed"
+                "results": "Fail",
+                "comment": "Test Fail"
             }
 
     def test_23__test_left_toc(self):
@@ -660,8 +660,8 @@ class TestAppium(unittest.TestCase):
         #     self.write_to_report()
         # except:
         #     initial[name] = {
-        #         "results": "Failed",
-        #         "comment": "Test Failed"
+        #         "results": "Fail",
+        #         "comment": "Test Fail"
         #     }
         self.write_to_report()
 
