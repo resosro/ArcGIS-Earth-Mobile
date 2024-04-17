@@ -47,7 +47,7 @@ class TestAppium(unittest.TestCase):
         print("called")
         report_file = os.path.join("reporting/output/report_file.json")
         if not os.path.exists(report_file):
-            open(report_file, 'x')
+            open(report_file, "x")
         with open(report_file, 'a') as rep:
             string = str(initial).replace("\'", "\"")
             rep.write(string)
